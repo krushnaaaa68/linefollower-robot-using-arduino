@@ -3,7 +3,7 @@ Line Follower Robot – Rmageddon 2025 (Tech Event Project)
 
 This robot uses an IR sensor array for line detection and controls two BO motors via an L298N motor driver, powered by a Li-Po battery.
 
-🔥 Features
+# Features
 
 Smooth line following on black track
 
@@ -17,7 +17,6 @@ Li-Po battery for high current output
 
 Simple, low-cost, and easy to build
 
-🧰 Technologies & Components
 # Components List
 
 1. Arduino uno
@@ -32,7 +31,7 @@ Simple, low-cost, and easy to build
 10. Battery holder / Velcro mount
 11. Screws, spacers, nuts
 s
-🧠 Working Principle
+# Working Principle
 
 The IR sensor array continuously detects the position of the black line beneath the robot.
 Based on this, the microcontroller identifies:
@@ -44,36 +43,7 @@ Robot is moving left
 Robot is moving right
 
 It then adjusts the motor speeds using a simple error-control algorithm (Basic or PID).
-WORKING CODE :
-// ----------------------------------------------------------
-// Line Follower Robot (BO Motor + L298N + IR Array)
-// Made for Armageddon 2025 – by Krishna Bule
-// ----------------------------------------------------------
-
-/* ----- PIN CONFIGURATION ----- */
-#define ENA 9       // L298N Enable A (Left motor speed)
-#define ENB 10      // L298N Enable B (Right motor speed)
-
-#define IN1 2       // Left motor forward
-#define IN2 3       // Left motor backward
-#define IN3 4       // Right motor forward
-#define IN4 5       // Right motor backward
-
-// IR Sensor Inputs (5-sensor array)
-#define S1 A0       // Left-most
-#define S2 A1
-#define S3 A2       // Center
-#define S4 A3
-#define S5 A4       // Right-most
-
-/* ----- BASE SPEEDS ----- */
-int baseSpeed = 130;     // Normal forward speed
-int turnSpeed = 180;     // Speed used during turns
-
-/* ----- THRESHOLD ----- */
-int threshold = 500;     // IR value to detect black/white
-
-/* ---------------------------------------------------------- */
+# WORKING CODE :
 
 void setup() {
   pinMode(ENA, OUTPUT);
